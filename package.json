@@ -1,0 +1,29 @@
+{
+  "name": "devshop",
+  "version": "1.0.0",
+  "description": "virtual store using nodejs, express, mysql and ejs template engine",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mandimartins/devshop.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mandimartins/devshop/issues"
+  },
+  "homepage": "https://github.com/mandimartins/devshop#readme",
+  "dependencies": {
+    "ejs": "^2.6.2",
+    "express": "^4.17.1",
+    "knex": "^0.18.2",
+    "mysql2": "^1.6.5"
+  },
+  "devDependencies": {
+    "nodemon": "^1.19.1"
+  }
+}
