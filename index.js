@@ -1,6 +1,8 @@
 const express = require('express')
 
 const app = express()
+const slug = require('./utils/slug')
+
 const port = process.env.port || 3000
 
 const db = require('knex')({
@@ -22,11 +24,19 @@ app.use(express.static('public'))
 
 app.get('/', async(req, res)=>{
     const categories = await db('categories').select('*')
-    console.log(categories)
-    res.render('home',{categories})
+    const categoriesWithSlug = categories.map(category =>{
+        const newCategory = {...category,slug:slug(category.category)}
+        console.log(newCategory)
+        return newCategory
+    })
+    res.render('home',{categories: categoriesWithSlug})
 })
-app.get('/categoria/:id',async(req,res)=>{
+app.get('/categoria/:id/:slug',async(req,res)=>{
     const categories = await db('categories').select('*')
+    const categoriesWithSlug = categories.map(category =>{
+        const newCategory = {...category,slug:slug(category.category)}
+        return newCategory
+    })
     const products = await db('products').select('*').where('id',function(){
         this
         .select('categories_products.product_id')
@@ -34,9 +44,12 @@ app.get('/categoria/:id',async(req,res)=>{
         .whereRaw('categories_products.product_id = products.id')
         .where('categorie_id',req.params.id)
     })
+
+    const category = await db('categories').select('*').where('id',req.params.id)
     res.render('category',{
-        categories,
-        products
+        categories:categoriesWithSlug,
+        products,
+        category
     })
 })
 app.listen(port, err =>{
