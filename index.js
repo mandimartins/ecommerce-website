@@ -1,57 +1,24 @@
-const express = require('express')
-
-const app = express()
-const slug = require('./utils/slug')
-
-const port = process.env.port || 3000
-
 const db = require('knex')({
     client:'mysql2',
     connection:{
         host:'localhost',
         user:'root',
-        password:'password',
+        password:'amds121097',
         database:'devshop'
     }
 })
 
 db.on('query', query =>{
-    console.log(query)
+    console.log('SQL: ',query.sql)
 })
 
-app.set('view engine','ejs')
-app.use(express.static('public'))
+const app = require('./app')(db)
 
-app.get('/', async(req, res)=>{
-    const categories = await db('categories').select('*')
-    const categoriesWithSlug = categories.map(category =>{
-        const newCategory = {...category,slug:slug(category.category)}
-        console.log(newCategory)
-        return newCategory
-    })
-    res.render('home',{categories: categoriesWithSlug})
-})
-app.get('/categoria/:id/:slug',async(req,res)=>{
-    const categories = await db('categories').select('*')
-    const categoriesWithSlug = categories.map(category =>{
-        const newCategory = {...category,slug:slug(category.category)}
-        return newCategory
-    })
-    const products = await db('products').select('*').where('id',function(){
-        this
-        .select('categories_products.product_id')
-        .from('categories_products')
-        .whereRaw('categories_products.product_id = products.id')
-        .where('categorie_id',req.params.id)
-    })
+const port = process.env.PORT || 3000
 
-    const category = await db('categories').select('*').where('id',req.params.id)
-    res.render('category',{
-        categories:categoriesWithSlug,
-        products,
-        category
-    })
-})
+const user = require('./models/user')
+user.initialUser(db)()
+
 app.listen(port, err =>{
     if(err){
         console.log('nao foi possivel iniciar o servidor',err)
