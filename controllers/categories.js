@@ -10,6 +10,13 @@ const getCategories = db =>async(req, res)=>{
     })
 }
 
+const adminGetCategories = db => async(req, res)=>{
+    const categories = await category.getCategories(db)()
+    res.render('admin/categories/index',{
+        categories
+    })
+}
 module.exports = {
-    getCategories
+    getCategories,
+    adminGetCategories
 }
