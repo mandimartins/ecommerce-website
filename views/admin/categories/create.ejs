@@ -1,0 +1,64 @@
+<%- include('../header') %>
+
+<!-- ========================= SECTION PAGETOP ========================= -->
+<section class="section-pagetop bg-secondary">
+  <div class="container clearfix">
+    <h2 class="title-page">Admin</h2>
+
+    <nav class="float-left">
+      <ol class="breadcrumb text-white">
+        <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
+      </ol>
+    </nav>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content bg padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-sm-12">
+          <div class="row">
+        <div class="card col-md-8 offset-md-2">
+          <article class="card-body">
+            <h4 class="card-title mb-4 mt-1">Criar nova categoria</h4>
+            <form method="POST">
+              <div class="form-group">
+                <label>Categoria</label>
+                <input
+                  name="category"
+                  class="form-control"
+                  type="text"
+                />
+                <% if(errors && errors.indexOf('category') >= 0){ %>
+                  <div class="invalid-feedback">Please choose a username.</div>
+               <% } %>
+                
+              </div>
+              <!-- form-group// -->
+              <div class="form-group">
+                <label>Descrição</label>
+                <textarea name="description"
+                class="form-control"></textarea>
+                  
+              </div>
+              <div class="form-group">
+                <button type="submit" class="btn btn-primary btn-block">
+                  Salvar
+                </button>
+              </div>
+            </form>
+          </article>
+        </div>
+        <!-- card.// -->
+    </div>
+      </main>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+
+<%- include('../../footer') %>

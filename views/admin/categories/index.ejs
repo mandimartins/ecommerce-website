@@ -7,7 +7,7 @@
         
             <nav class="float-left">
             <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
             </ol>  
             </nav>
         </div> <!-- container //  -->
@@ -20,6 +20,11 @@
         
         <div class="row">
             <main class="col-sm-12">
+                <div class="card mb-5">
+                    <div class="card-body">
+                        <a href="/admin/categorias/nova" class="btn btn-primary">Nova Categoria</a>
+                    </div>
+                </div>
         
         <% categories.forEach(category =>{ %>
         <article class="card card-product">
