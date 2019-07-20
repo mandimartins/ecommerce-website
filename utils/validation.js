@@ -15,17 +15,16 @@ const extractErrors = error =>{
     }
 }
 
-const ValidationError = (message, errors)=>{
-    return {
-        message,
-        errors
-    }
-}
+const ValidationError = (message, errors)=>({
+    message,
+    errors
+})
+
 
 const validate = (obj, schema)=>{
     const {error, value} = joi.validate(obj,schema, {abortEarly: false, stripUnknown: true})
     if(error){
-        throw ValidationError({message: 'Validation', errors:extractErrors(error)}) 
+        throw ValidationError('Validation',extractErrors(error)) 
     }else{
         return value
     }
