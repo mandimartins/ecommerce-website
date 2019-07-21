@@ -1,5 +1,5 @@
 const init = db =>{
-    const category = require('./models/category');
+    const category = require('./models/category')(db)
     const routes = require('./routes/index')
     const bodyParser = require('body-parser')
     const session = require('express-session')
@@ -20,7 +20,7 @@ const init = db =>{
 
     //middleware
     app.use(async(req, res, next)=>{
-        const categories = await category.getCategories(db)()
+        const categories = await category.getCategories()
         const {user} = req.session
         res.locals = {
             categories,

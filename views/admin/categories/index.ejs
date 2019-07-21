@@ -7,7 +7,7 @@
         
             <nav class="float-left">
             <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="/admin">Admin</a></li>
+                <li class="breadcrumb-item"><a href="/admin">Home</a></li>
             </ol>  
             </nav>
         </div> <!-- container //  -->
@@ -34,8 +34,8 @@
                         <h4 class="title"><%- category.category %></h4> 
                 </article> <!-- col.// --> 
                 <div class="col-md-3 justify-content-center">
-                    <a href="/admin/categorias/editar/11" class="btn btn-secondary">Editar</a>
-                    <a href="/admin/categorias/excluir/11" class="btn btn-danger">Excluir</a>
+                    <a href="/admin/categorias/editar/<%-category.id %>" class="btn btn-secondary">Editar</a>
+                    <a href="/admin/categorias/excluir/<%-category.id %>" class="btn btn-danger">Excluir</a>
                 </div>
             </div> <!-- row.// -->
             </div> <!-- card-body .// -->
