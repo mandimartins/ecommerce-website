@@ -22,12 +22,14 @@ const ValidationError = (message, errors)=>({
 
 
 const validate = (obj, schema)=>{
+
     const {error, value} = joi.validate(obj,schema, {abortEarly: false, stripUnknown: true})
     if(error){
         throw ValidationError('Validation',extractErrors(error)) 
     }else{
         return value
     }
+    
 }
 
 module.exports = {

@@ -10,6 +10,4 @@ const init = db =>{
         getProduct
     }
 }
-
-
 module.exports = init
