@@ -1,2 +1,2 @@
 # devshop
-virtual store using nodejs, express, mysql and ejs template engine
+virtual store ( nodejs, express, mysql and ejs template engine)
