@@ -18,16 +18,16 @@
   },
   "homepage": "https://github.com/mandimartins/devshop#readme",
   "dependencies": {
-    "@hapi/joi": "^15.1.0",
+    "@hapi/joi": "^15.1.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
-    "ejs": "^2.6.2",
+    "ejs": "^2.7.4",
     "express": "^4.17.1",
-    "express-session": "^1.16.2",
+    "express-session": "^1.17.0",
     "knex": "^0.19.5",
-    "mysql2": "^1.6.5"
+    "mysql2": "^1.7.0"
   },
   "devDependencies": {
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.4"
   }
 }
