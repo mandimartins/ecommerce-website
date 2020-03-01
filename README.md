@@ -1,6 +1,6 @@
 # Devshop
 
-Loja virtual desenvolvida no [Fullstackmaster](https://lp.devpleno.com/fullstack-master-listadeespera/)
+Loja virtual desenvolvida no [Fullstackmaster](https://devpleno.com/)
 
 
 ### Pré-requisitos
@@ -36,7 +36,7 @@ E-commerce projects
 
 
 ## Contribuição
-Leia ---->>>> [CONTRIBUTING.md](https://gist.github.com/PurpleBooth/b24679402957c63ec426) 
+Leia ---->>>> [CONTRIBUTING.md](https://github.com/mandimartins/devshop/blob/master/CONTRIBUTING.md) 
 
 
 ## License
