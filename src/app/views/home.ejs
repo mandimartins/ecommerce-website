@@ -1,101 +1,42 @@
 <%- include('./header') %>
-<!-- ========================= SECTION MAIN ========================= -->
-<section class="section-main bg padding-top-sm">
-    <div class="container">
-    
-    <div class="row-sm">
-        <div class="col-md-8">
-    
-    
-    <!-- ================= main slide ================= -->
-    <div class="owl-init slider-main owl-carousel" data-items="1" data-dots="false" data-nav="true">
-        <div class="item-slide">
-            <img src="images/banners/slide1.jpg">
-        </div>
-        <div class="item-slide rounded">
-            <img src="images/banners/slide2.jpg">
-        </div>
-        <div class="item-slide rounded">
-            <img src="images/banners/slide3.jpg">
-        </div>
-    </div>
-    <!-- ============== main slidesow .end // ============= -->
-    
-        </div> <!-- col.// -->
-        <aside class="col-md-4">
-    
-    <div class="card mb-3">
-    <figure class="itemside">
-        <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="images/items/1.jpg"></div></div>
-        <figcaption class="text-wrap align-self-center">
-            <h6 class="title">Group of products is here </h6>
-            <a href="#">More items</a>
-        </figcaption>
-    </figure>
-    </div> <!-- card.// -->
-    
-    <div class="card mb-3">
-    <figure class="itemside">
-        <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="images/items/2.jpg"></div></div>
-        <figcaption class="text-wrap align-self-center">
-            <h6 class="title">Group of products  is here </h6>
-            <a href="#">More items</a>
-        </figcaption>
-    </figure>
-    </div> <!-- card.// -->
-    
-    <div class="card">
-    <figure class="itemside">
-        <div class="aside"><div class="img-wrap p-2 border-right"><img class="img-sm" src="images/items/3.jpg"></div></div>
-        <figcaption class="text-wrap align-self-center">
-            <h6 class="title">Group of products is here </h6>
-            <a href="#">More items</a>
-        </figcaption>
-    </figure>
-    </div> <!-- card.// -->
-    
-        </aside>
-    </div>
-    </div> <!-- container .//  -->
-    </section>
-    <!-- ========================= SECTION MAIN END// ========================= -->
-    
-    <section class="section-content padding-y bg">
-    <div class="container">
-    
-    <div class="card">
-        <div class="card-body">
-    
-    <header class="section-heading">
-    <h3 class="title-section">Main section is here</h3>
-    </header>
-    
-    <article>
-    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-    tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    <p>Ut enim ad minim veniam,
-    quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-    consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-    cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-    proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-    
-    
-    </article>
-        </div>
-    </div>
-    
-    </div> <!-- container .//  -->
-    </section>
-    <!-- ========================= SECTION CONTENT END// ========================= -->
 
-    <%- include('./footer') %>
-    
+<!-- ========================= SECTION MAIN ========================= -->
+<section class="section-main bg padding-y">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-3">
+        <nav class="card">
+          <ul class="menu-category">
+            <li><a href="#">Best clothes</a></li>
+            <li><a href="#">Automobiles</a></li>
+            <li><a href="#">Home interior</a></li>
+            <li><a href="#">Electronics</a></li>
+            <li><a href="#">Technologies</a></li>
+            <li><a href="#">Digital goods</a></li>
+            <li class="has-submenu">
+              <a href="#">More items</a>
+              <ul class="submenu">
+                <li><a href="#">Submenu name</a></li>
+                <li><a href="#">Great submenu</a></li>
+                <li><a href="#">Another menu</a></li>
+                <li><a href="#">Some others</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+      <!-- col.// -->
+      <div class="col-md-9">
+        <article class="banner-wrap">
+          <img src="images/banners/banner.jpg" class="w-100 rounded" />
+        </article>
+      </div>
+      <!-- col.// -->
+    </div>
+    <!-- row.// -->
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION MAIN END// ========================= -->
+
+<%- include('./footer') %>
