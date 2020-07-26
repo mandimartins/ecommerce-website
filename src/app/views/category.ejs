@@ -1,119 +1,353 @@
-<%- include('header') %>
+<%- include('./header') %>
+<section class="section-pagetop bg">
+  <div class="container">
+    <h2 class="title-page"><%-category[0].category %></h2>
+    <nav>
+      <ol class="breadcrumb text-white">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item active" aria-current="page">
+          <%-category[0].category %>
+        </li>
+      </ol>
+    </nav>
+  </div>
+  <!-- container //  -->
+</section>
+<section class="section-content padding-y">
+  <div class="container">
+    <div class="row">
+      <aside class="col-md-3">
+        <div class="card">
+          <article class="filter-group">
+            <header class="card-header">
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapse_1"
+                aria-expanded="true"
+                class=""
+              >
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Product type</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_1" style="">
+              <div class="card-body">
+                <form class="pb-3">
+                  <div class="input-group">
+                    <input
+                      type="text"
+                      class="form-control"
+                      placeholder="Search"
+                    />
+                    <div class="input-group-append">
+                      <button class="btn btn-light" type="button">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
+                  </div>
+                </form>
 
-<!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg-secondary">
-        <div class="container clearfix">
-            <h2 class="title-page"><%-category[0].category %></h2>
-        
-            <nav class="float-left">
-            <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item" aria-current="page"><%-category[0].category %></li>
-            </ol>  
-            </nav>
-        </div> <!-- container //  -->
-        </section>
-        <!-- ========================= SECTION INTRO END// ========================= -->
-        
-        <!-- ========================= SECTION CONTENT ========================= -->
-        <section class="section-content bg padding-y">
-        <div class="container">
-        
-        <div class="row">
-            <main class="col-sm-12">
-        
-        <% products.data.forEach(product =>{ %>
-        <article class="card card-product">
-            <div class="card-body">
-            <div class="row">
-                <aside class="col-sm-3">
-                    <div class="img-wrap"><img src="images/items/2.jpg"></div>
-                </aside> <!-- col.// -->
-                <article class="col-sm-6">
-                        <h4 class="title"><%- product.name %></h4>
-                        <div class="rating-wrap  mb-2">
-                            <ul class="rating-stars">
-                                <li style="width:80%" class="stars-active"> 
-                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                    <i class="fa fa-star"></i> 
-                                </li>
-                                <li>
-                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                    <i class="fa fa-star"></i> <i class="fa fa-star"></i> 
-                                    <i class="fa fa-star"></i> 
-                                </li>
-                            </ul>
-                            <div class="label-rating">132 reviews</div>
-                            <div class="label-rating">154 orders </div>
-                        </div> <!-- rating-wrap.// -->
-                        <p><%- product.description%> </p>
-                        <dl class="dlist-align">
-                          <dt>Color</dt>
-                          <dd>Black and white</dd>
-                        </dl>  <!-- item-property-hor .// -->
-                        <dl class="dlist-align">
-                          <dt>Material</dt>
-                          <dd>Syntetic, wooden</dd>
-                        </dl>  <!-- item-property-hor .// -->
-                        <dl class="dlist-align">
-                          <dt>Delivery</dt>
-                          <dd>Russia, USA, and Europe</dd>
-                        </dl>  <!-- item-property-hor .// -->
-                    
-                </article> <!-- col.// -->
-                
-                <aside class="col-sm-3 border-left">
-                    <div class="action-wrap">
-                        <div class="price-wrap h4">
-                            <span class="price"> $56 </span>	
-                            <del class="price-old"> $98</del>
-                        </div> <!-- info-price-detail // -->
-                        <p class="text-success">Free shipping</p>
-                        <br>
-                        <p>
-                            <a href="#" class="btn btn-primary"> Buy now </a>
-                            <a href="/produto/<%- product.id %>/slug" class="btn btn-secondary"> Details  </a>
-                        </p>
-                        <a href="#"><i class="fa fa-heart"></i> Add to wishlist</a>
-                    </div> <!-- action-wrap.// -->
-                </aside> <!-- col.// -->
-            </div> <!-- row.// -->
-            </div> <!-- card-body .// -->
-        </article> <!-- card product .// -->
-        <% }) %>
-        <%- JSON.stringify(products.pagination) %>
+                <ul class="list-menu">
+                  <li><a href="#">People </a></li>
+                  <li><a href="#">Watches </a></li>
+                  <li><a href="#">Cinema </a></li>
+                  <li><a href="#">Clothes </a></li>
+                  <li><a href="#">Home items </a></li>
+                  <li><a href="#">Animals</a></li>
+                  <li><a href="#">People </a></li>
+                </ul>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- filter-group  .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapse_2"
+                aria-expanded="true"
+                class=""
+              >
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Brands</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_2" style="">
+              <div class="card-body">
+                <label class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    checked=""
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">
+                    Mercedes
+                    <b class="badge badge-pill badge-light float-right">120</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    checked=""
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">
+                    Toyota
+                    <b class="badge badge-pill badge-light float-right">15</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    checked=""
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">
+                    Mitsubishi
+                    <b class="badge badge-pill badge-light float-right">35</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input
+                    type="checkbox"
+                    checked=""
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">
+                    Nissan
+                    <b class="badge badge-pill badge-light float-right">89</b>
+                  </div>
+                </label>
+                <label class="custom-control custom-checkbox">
+                  <input type="checkbox" class="custom-control-input" />
+                  <div class="custom-control-label">
+                    Honda
+                    <b class="badge badge-pill badge-light float-right">30</b>
+                  </div>
+                </label>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapse_3"
+                aria-expanded="true"
+                class=""
+              >
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Price range</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_3" style="">
+              <div class="card-body">
+                <input
+                  type="range"
+                  class="custom-range"
+                  min="0"
+                  max="100"
+                  name=""
+                />
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label>Min</label>
+                    <input
+                      class="form-control"
+                      placeholder="$0"
+                      type="number"
+                    />
+                  </div>
+                  <div class="form-group text-right col-md-6">
+                    <label>Max</label>
+                    <input
+                      class="form-control"
+                      placeholder="$1,0000"
+                      type="number"
+                    />
+                  </div>
+                </div>
+                <!-- form-row.// -->
+                <button class="btn btn-block btn-primary">Apply</button>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapse_4"
+                aria-expanded="true"
+                class=""
+              >
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">Sizes</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse show" id="collapse_4" style="">
+              <div class="card-body">
+                <label class="checkbox-btn">
+                  <input type="checkbox" />
+                  <span class="btn btn-light"> XS </span>
+                </label>
 
-        <nav aria-label="Mais produtos">
-            <ul class="pagination justify-content-center">
-               <% if(products.pagination.currentPage > 0){ %>
-                <li class="page-item"><a class="page-link" href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- products.pagination.currentPage - 1%>">Anterior</a></li>
-               <% } %>
-                    <% for(let i=0; i<products.pagination.totalPages; i++ ) {%><li class="page-item"><a class="page-link" href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- i %>"><%= i+1 %></a></li>
-                    <% } %>
-                    <% if(products.pagination.currentPage < products.pagination.totalPages - 1){ %>
-                    <li class="page-item"><a class="page-link" href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- products.pagination.currentPage + 1%>">Próximo</a></li>
-                    <% } %>
-            </ul>
-          </nav>
-            </main> <!-- col.// -->
+                <label class="checkbox-btn">
+                  <input type="checkbox" />
+                  <span class="btn btn-light"> SM </span>
+                </label>
+
+                <label class="checkbox-btn">
+                  <input type="checkbox" />
+                  <span class="btn btn-light"> LG </span>
+                </label>
+
+                <label class="checkbox-btn">
+                  <input type="checkbox" />
+                  <span class="btn btn-light"> XXL </span>
+                </label>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- filter-group .// -->
+          <article class="filter-group">
+            <header class="card-header">
+              <a
+                href="#"
+                data-toggle="collapse"
+                data-target="#collapse_5"
+                aria-expanded="false"
+                class=""
+              >
+                <i class="icon-control fa fa-chevron-down"></i>
+                <h6 class="title">More filter</h6>
+              </a>
+            </header>
+            <div class="filter-content collapse in" id="collapse_5" style="">
+              <div class="card-body">
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    name="myfilter_radio"
+                    checked=""
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">Any condition</div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    name="myfilter_radio"
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">Brand new</div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    name="myfilter_radio"
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">Used items</div>
+                </label>
+
+                <label class="custom-control custom-radio">
+                  <input
+                    type="radio"
+                    name="myfilter_radio"
+                    class="custom-control-input"
+                  />
+                  <div class="custom-control-label">Very old</div>
+                </label>
+              </div>
+              <!-- card-body.// -->
+            </div>
+          </article>
+          <!-- filter-group .// -->
         </div>
-        
-        </div> <!-- container .//  -->
-        </section>
-        <!-- ========================= SECTION CONTENT END// ========================= -->
-        
-        <!-- ========================= SECTION  ========================= -->
-        <section class="section-name bg-white padding-y">
-        <div class="container">
-        <h4>Another section if needed</h4>
-        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
-        quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
-        consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
-        cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
-        proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
-        </div><!-- container // -->
-        </section>
-        <!-- ========================= SECTION  END// ========================= -->
-<%- include('footer') %>
+        <!-- card.// -->
+      </aside>
+      <!-- col.// -->
+      <main class="col-md-9">
+        <div class="row">
+          <% products.data.forEach(product =>{ %>
+          <div class="col-md-4">
+            <figure class="card card-product-grid">
+              <div class="img-wrap">
+                <span class="badge badge-danger"> NEW </span>
+                <img src="/images/items/4.jpg" />
+                <a class="btn-overlay" href="/produto/<%- product.id %>/slug"
+                  ><i class="fa fa-search-plus"></i> Quick view</a
+                >
+              </div>
+              <!-- img-wrap.// -->
+              <figcaption class="info-wrap">
+                <div class="fix-height">
+                  <a href="#" class="title"><%- product.name %></a>
+                  <div class="price-wrap mt-2">
+                    <span class="price">$50</span>
+                    <del class="price-old">$100</del>
+                  </div>
+                  <!-- price-wrap.// -->
+                </div>
+                <a href="#" class="btn btn-block btn-primary">Add to cart </a>
+                <a href="#" class="btn btn-light btn-block"
+                  ><i class="fa fa-heart"></i>
+                  <span class="text">Add to wishlist</span>
+                </a>
+              </figcaption>
+            </figure>
+          </div>
+          <% }) %>
+          <!-- col.// -->
+        </div>
+        <!-- row end.// -->
+        <nav class="mt-4" aria-label="Page navigation sample">
+          <ul class="pagination justify-content-center">
+            <% if(products.pagination.currentPage > 0){ %>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- products.pagination.currentPage - 1%>"
+                >Anterior</a
+              >
+            </li>
+            <% } %> <% for(let i=0; i < products.pagination.totalPages; i++ )
+            {%>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- i %>"
+                ><%= i+1 %></a
+              >
+            </li>
+            <% } %> <% if(products.pagination.currentPage <
+            products.pagination.totalPages - 1){ %>
+            <li class="page-item">
+              <a
+                class="page-link"
+                href="?pageSize=<%- products.pagination.pageSize %>&currentPage=<%- products.pagination.currentPage + 1%>"
+                >Próximo</a
+              >
+            </li>
+            <% } %>
+          </ul>
+        </nav>
+      </main>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+<%- include('./footer') %>
