@@ -1,50 +1,60 @@
 <%- include('../header') %>
 
 <!-- ========================= SECTION PAGETOP ========================= -->
-<section class="section-pagetop bg-secondary">
-        <div class="container clearfix">
-            <h2 class="title-page">Admin</h2>
-        
-            <nav class="float-left">
-            <ol class="breadcrumb text-white">
-                <li class="breadcrumb-item"><a href="/admin">Home</a></li>
-            </ol>  
-            </nav>
-        </div> <!-- container //  -->
-        </section>
-        <!-- ========================= SECTION INTRO END// ========================= -->
-        
-        <!-- ========================= SECTION CONTENT ========================= -->
-        <section class="section-content bg padding-y">
-        <div class="container">
-        
-        <div class="row">
-            <main class="col-sm-12">
-                <div class="card mb-5">
-                    <div class="card-body">
-                        <a href="/admin/categorias/nova" class="btn btn-primary">Nova Categoria</a>
-                    </div>
-                </div>
-        
-        <% categories.forEach(category =>{ %>
-        <article class="card card-product">
-            <div class="card-body">
-            <div class="row">
-                <article class="col-md-9">
-                        <h4 class="title"><%- category.category %></h4> 
-                </article> <!-- col.// --> 
-                <div class="col-md-3 justify-content-center">
-                    <a href="/admin/categorias/editar/<%-category.id %>" class="btn btn-secondary">Editar</a>
-                    <a href="/admin/categorias/excluir/<%-category.id %>" class="btn btn-danger">Excluir</a>
-                </div>
-            </div> <!-- row.// -->
-            </div> <!-- card-body .// -->
-        </article> <!-- card product .// -->
-        <% }) %>
-            </main> <!-- col.// -->
+<section class="section-pagetop bg-light">
+  <div class="container clearfix">
+    <h2 class="title-page">Admin</h2>
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item">
+          <a class="" href="/admin">Admin</a>
+        </li>
+        <li class="breadcrumb-item active" aria-current="page">Categorias</li>
+      </ol>
+    </nav>
+  </div>
+  <!-- container //  -->
+</section>
+<!-- ========================= SECTION INTRO END// ========================= -->
+
+<!-- ========================= SECTION CONTENT ========================= -->
+<section class="section-content bg padding-y">
+  <div class="container">
+    <div class="row">
+      <main class="col-sm-12">
+        <div class="box mb-5">
+          <a href="/admin/categorias/nova" class="btn btn-primary"
+            >Nova Categoria</a
+          >
         </div>
-        
-        </div> <!-- container .//  -->
-        </section>
-        
-<%- include('../../footer') %>
+
+        <% categories.forEach(category =>{ %>
+        <article class="box mb-2">
+          <div class="row">
+            <h4 class="title col-md-8"><%- category.category %></h4>
+            <!-- col.// -->
+            <div class="col-md-4 d-flex justify-content-around">
+              <a
+                href="/admin/categorias/editar/<%-category.id %>"
+                class="btn btn-secondary"
+                >Editar</a
+              >
+              <a
+                href="/admin/categorias/excluir/<%-category.id %>"
+                class="btn btn-danger"
+                >Excluir</a
+              >
+            </div>
+          </div>
+          <!-- row.// -->
+        </article>
+        <% }) %>
+      </main>
+      <!-- col.// -->
+    </div>
+  </div>
+  <!-- container .//  -->
+</section>
+
+<%- include('../footer') %>
