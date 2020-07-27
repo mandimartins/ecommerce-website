@@ -1,0 +1,21 @@
+    <!-- ========================= FOOTER ========================= -->
+    <footer class="section-footer border-top">
+      <div class="container">
+        <section class="footer-bottom row">
+          <div class="col-md-2">
+            <p id="footer-copy" class="text-muted"></p>
+          </div>
+          <div class="col-md-8 text-md-center">
+            <span class="px-2">Developed by Amanda martins - <a href="https://github.com/mandimartins">Github</a></span>
+          </div>
+        </section>
+      </div>
+    </footer>
+    <script>
+      var dateobject = new Date();
+      var currentYear = dateobject.getFullYear();
+      var footerText = `&copy ${currentYear} Company name`
+      document.getElementById("footer-copy").innerHTML = footerText
+    </script>
+  </body>
+</html>
