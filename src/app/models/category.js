@@ -3,7 +3,7 @@ const init = (db) => {
   const joi = require('@hapi/joi');
   const validation = require('../utils/validation');
 
-  const createSchema = joi.object().keys({
+  const createSchema = joi.object({
     category: joi.string().min(5).max(245).required(),
     description: joi.string().min(5).required(),
   });
