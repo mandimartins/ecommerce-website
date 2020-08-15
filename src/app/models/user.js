@@ -24,7 +24,7 @@ const initialUser = (db) => async (id) => {
 };
 
 const login = (db) => async (email, passwd) => {
-  const user = await db('users').select('*').where('email', email);
+  const user = await db('users').select('*').where({ email });
   if (user.length === 0) {
     throw new Error('Invalild User.');
   }

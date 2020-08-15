@@ -5,11 +5,12 @@ const login = (db) => async (req, res) => {
     req.session.user = userFromDb;
     res.redirect('/');
   } catch (error) {
-    res.send('Error: ' + error);
+    res.status(400).send('Error: ' + error);
   }
 };
+
 const logout = (req, res) => {
-  req.session.destroy(() => {});
+  req.session.destroy();
   res.redirect('/');
 };
 module.exports = {

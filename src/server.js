@@ -4,7 +4,7 @@ db.on('query', (query) => {
   console.log('SQL: ', query.sql);
 });
 
-const app = require('./app/app')(db);
+const app = require('./app.js')(db);
 
 const port = process.env.PORT || 5000;
 

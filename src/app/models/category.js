@@ -1,7 +1,7 @@
 const init = (db) => {
-  const slug = require('../utils/slug');
+  const slug = require('../../utils/slug');
   const joi = require('@hapi/joi');
-  const validation = require('../utils/validation');
+  const validation = require('../../utils/validation');
 
   const createSchema = joi.object({
     category: joi.string().min(5).max(245).required(),
