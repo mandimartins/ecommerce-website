@@ -13,8 +13,8 @@ const init = (db) => {
 
   app.use(
     session({
-      secret: 'littlesecret!',
-      name: 'sessionId',
+      secret: process.env.SESSION_SECRET,
+      name: process.env.SESSION_NAME,
     })
   );
 
@@ -33,6 +33,9 @@ const init = (db) => {
     next();
   });
   app.use(routes(db));
+  app.use((req, res) => {
+    res.status(404).send('<h1> Page not found </h1>');
+  });
 
   return app;
 };
