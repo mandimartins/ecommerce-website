@@ -36,4 +36,5 @@ const login = (db) => async (email, passwd) => {
 module.exports = {
   initialUser,
   login,
+  generatePassHash,
 };
