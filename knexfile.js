@@ -1,8 +1,13 @@
 const path = require('path');
+const dotenv = require('dotenv');
+
+dotenv.config({
+  path: process.env.NODE_ENV === 'production' ? '.env' : '.env.test',
+});
 
 module.exports = {
   development: {
-    client: 'sqlite3',
+    client: process.env.DB_CLIENT,
     connection: {
       filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite'),
     },
@@ -15,14 +20,13 @@ module.exports = {
     useNullAsDefault: true,
   },
 
-  //use enviroment variables in production
   production: {
-    client: 'mysql2',
+    client: process.env.DB_CLIENT,
     connection: {
-      host: 'localhost',
-      user: 'root',
-      password: 'toor',
-      database: 'devshop',
+      host: process.env.DB_HOST,
+      user: process.env.DB_USER,
+      password: process.env.DB_PASSWORD,
+      database: process.env.DATABASE,
     },
     pool: {
       min: 2,
