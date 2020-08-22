@@ -4,7 +4,7 @@
   "description": "Ecommerce website built with node, express, ejs",
   "main": "index.js",
   "scripts": {
-    "start": "npx cross-env NODE_ENV=production && npx knex migrate:latest && node src/server.js",
+    "start": "npx cross-env NODE_ENV=production npx knex migrate:latest && node src/server.js",
     "dev": "npx knex migrate:rollback --all && npx knex migrate:latest && npx knex seed:run  && nodemon src/server.js",
     "pretest": "npx knex migrate:rollback --all && npx knex migrate:latest && npx knex seed:run",
     "test": "jest",
