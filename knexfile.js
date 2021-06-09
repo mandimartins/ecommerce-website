@@ -1,21 +1,21 @@
-const path = require('path');
-const dotenv = require('dotenv');
+const path = require("path");
+const dotenv = require("dotenv");
 
 dotenv.config({
-  path: process.env.NODE_ENV === 'production' ? '.env' : '.env.test',
+  path: process.env.NODE_ENV === "production" ? ".env" : ".test.env",
 });
 
 module.exports = {
   development: {
     client: process.env.DB_CLIENT,
     connection: {
-      filename: path.resolve(__dirname, 'src', 'database', 'database.sqlite'),
+      filename: path.resolve(__dirname, "src", "database", "database.sqlite"),
     },
     migrations: {
-      directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
+      directory: path.resolve(__dirname, "src", "database", "migrations"),
     },
     seeds: {
-      directory: path.resolve(__dirname, 'src', 'database', 'seeds'),
+      directory: path.resolve(__dirname, "src", "database", "seeds"),
     },
     useNullAsDefault: true,
   },
@@ -33,7 +33,7 @@ module.exports = {
       max: 10,
     },
     migrations: {
-      directory: path.resolve(__dirname, 'src', 'database', 'migrations'),
+      directory: path.resolve(__dirname, "src", "database", "migrations"),
     },
     useNullAsDefault: true,
   },
