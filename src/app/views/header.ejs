@@ -27,6 +27,14 @@
       rel="stylesheet"
     />
 
+    <!-- plugin: owl carousel  -->
+    <link href="plugins/owlcarousel/assets/owl.carousel.css" rel="stylesheet" />
+    <link
+      href="plugins/owlcarousel/assets/owl.theme.default.css"
+      rel="stylesheet"
+    />
+    <script src="plugins/owlcarousel/owl.carousel.min.js"></script>
+
     <!-- custom style -->
     <link href="/css/ui.css" rel="stylesheet" type="text/css" />
     <link
@@ -44,6 +52,50 @@
       // jquery ready start
       $(document).ready(function () {
         // jQuery code
+        if ($(".slider-banner-owl").length > 0) {
+          // check if element exists
+          $(".slider-banner-owl").owlCarousel({
+            autoplay:true,
+            loop: true,
+            margin: 0,
+            items: 1,
+            dots: false,
+            nav: true,
+            autoplayTimeout:3000,
+            navText: [
+              "<i class='fa fa-chevron-left'></i>",
+              "<i class='fa fa-chevron-right'></i>",
+            ],
+          });
+        } // end if
+
+        /////////////////  items slider. /plugins/owlslider/
+        if ($(".slider-items-owl").length > 0) {
+          // check if element exists
+          $(".slider-items-owl").owlCarousel({
+            autoplay:true,
+            loop: true,
+            margin: 10,
+            nav: true,
+            autoplayTimeout:3000,
+            navText: [
+              "<i class='fa fa-chevron-left'></i>",
+              "<i class='fa fa-chevron-right'></i>",
+            ],
+            responsive: {
+              0: {
+                items: 1,
+              },
+              640: {
+                items: 3,
+              },
+              1024: {
+                items: 4,
+              },
+            },
+          });
+        } // end if
+        
       });
       // jquery end
     </script>
@@ -55,33 +107,21 @@
           <div class="row align-items-center">
             <div class="col-lg-3 col-sm-4 col-12">
               <div class="brand-wrap">
-                <img class="logo" src="" />
+                <img class="logo" src="images/logo.png">
               </div>
               <!-- brand-wrap.// -->
             </div>
             <div class="col-lg-4 col-xl-5 col-sm-8 col-9">
               <form action="#" class="search">
                 <div class="input-group w-100">
-                  <input
-                    type="text"
-                    class="form-control"
-                    style="width: 55%;"
-                    placeholder="Search"
-                  />
-                  <select class="custom-select" name="category_name">
-                    <option value="">All type</option
-                    ><option value="codex">Special</option>
-                    <option value="comments">Only best</option>
-                    <option value="content">Latest</option>
-                  </select>
-                  <div class="input-group-append">
-                    <button class="btn btn-primary" type="submit">
-                      <i class="fa fa-search"></i>
-                    </button>
+                    <input type="text" class="form-control" placeholder="Search">
+                    <div class="input-group-append">
+                      <button class="btn btn-primary" type="submit">
+                        <i class="fa fa-search"></i>
+                      </button>
+                    </div>
                   </div>
-                </div>
-              </form>
-              <!-- search-wrap .end// -->
+              </form> <!-- search-wrap .end// -->
             </div>
             <!-- col.// -->
             <div class="col-lg-5 col-xl-4 col-sm-12">
@@ -182,7 +222,7 @@
         <!-- container.// -->
       </section>
       <!-- header-main .// -->
-      <nav class="navbar navbar-main navbar-expand-md navbar-light border-top border-bottom">
+      <nav class="navbar navbar-main navbar-expand-md navbar-dark bg-dark border-top border-bottom">
         <div class="container">
           <div class="collapse navbar-collapse" id="main_nav">
             <ul class="navbar-nav">
